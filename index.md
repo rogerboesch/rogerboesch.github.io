@@ -1,2 +1,2 @@
-I work on many projects and poc's all the time.
-this is an attempt to journaling them all here ...
+ar software engineering manager at day
+retro game developer at night :)
