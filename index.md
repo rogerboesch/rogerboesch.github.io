@@ -1,1 +1,1 @@
-ar software engineering manager at day | retro game developer at night :)
+> ar software engineering manager at day retro game developer at night :)
