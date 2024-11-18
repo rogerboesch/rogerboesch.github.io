@@ -4,12 +4,14 @@ The best to show and explain how programming for the Atari 2600 works, is to try
 
 For this 2nd part we will use just command line tools to have a solid understanding how all works below the hood.
 
+![Atari 2600](images/atari2600.jpg)
 
 ### Assembler
 The only programming language which was available in the seventies for the Atari was Assembler (No worries, it's not as horrible as it sounds...). This is also the reason why I want to use it in this tutorial at first, because we can work closely on the hardware and besides that, its fun to learn a "new" language :)
 
 The most flexible and solid Assembler for the Atari 2600 platform (and others) is DASM. DASM is an open source 8-bit Macro-Assembler and available for all major platforms (also macOS) and what we use at first. It has no dependencies to any other libraries and is therefore easy to build from source.
 
+![Atari 2600](images/atari-assembler.gif)
 
 ### Emulator
 For the emulator we have mainly two choices:

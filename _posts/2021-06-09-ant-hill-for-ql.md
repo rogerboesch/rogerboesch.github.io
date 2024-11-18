@@ -1,5 +1,7 @@
 ## 🕹️ Ant Hill - A cool game written in SuperBasic for the Sinclair QL!
 
+![Ant Hill](images/ant-hill.gif)
+
 Ant Hill is originally from the book **QL GAMESMASTER**
 It's a simple but effective program that involes the animation of a number of objects. 
 The basic idea is to guide a man through the tunnels of a ant colony with the aim
