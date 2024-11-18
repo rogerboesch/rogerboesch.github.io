@@ -1,5 +1,5 @@
 
-## Markdown meest AR: A Practical Approach to Prototyping
+## 👓 Markdown meets AR: A Practical Approach to Prototyping
 
 In my spare time, I work on two AR experiences.
 One of them is a casual game with ~ 100 different levels, which means a lot of 𝘤𝘰𝘥𝘦, 𝘣𝘶𝘪𝘭𝘥, 𝘥𝘦𝘱𝘭𝘰𝘺, 𝘵𝘦𝘴𝘵 ... 𝘳𝘦𝘱𝘦𝘢𝘵. In the past, I have always used text files or similar to describe the levels, model files, and scoring systems and coded the game in C++ to be platform-independent.
