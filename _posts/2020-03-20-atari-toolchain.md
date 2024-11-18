@@ -1,4 +1,4 @@
-## Atari 2600 Programming - Setup a toolchain on macOS
+## 🕹️ Atari 2600 Programming - Setup a toolchain on macOS
 
 The best to show and explain how programming for the Atari 2600 works, is to try out by yourself. And luckily it's now much more easier as it was at the time when the Atari was famous. It's possible today to cross-compile (means programming on your Mac or PC) and also use an emulator for testing. A huge improvement since then.
 

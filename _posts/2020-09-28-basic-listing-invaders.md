@@ -1,14 +1,4 @@
----
-layout: post
-title:  "Spectrum Invaders - BASIC Type-In Listing #2"
-image: assets/images/spectrum-invaders.gif
-categories: [ weekly-listing, zxspectrum ]
-tags: [ zxspectrum, basic ]
-featured: true
-hidden: false
----
-
-## Spectrum Invaders - BASIC Type-In Listing #2
+## 🕹️ Spectrum Invaders - BASIC Type-In Listing #2
 
 *from the Spectrum Book of games*
 Two types of alien ships are heading towards earth and you have to defend civilisation as we know it.

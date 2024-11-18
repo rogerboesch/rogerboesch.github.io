@@ -1,3 +1,3 @@
-## NMEA integration for Apple Vision Pro
+## 👓 NMEA integration for Apple Vision Pro
 
 Coming soon ...
