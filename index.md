@@ -5,5 +5,5 @@ I also write regularly about virtual and augmented reality.
 
 If you would like to know more, register also for my newsletters on substack:
 
-- [The Spatial Projects](https://visionos.substack.com/)
-- [The Vectrex Projects](https://vectrex.substack.com/)
+- [👓 The Spatial Projects](https://visionos.substack.com/)
+- [🕹️ The Vectrex Projects](https://vectrex.substack.com/)
