@@ -22,7 +22,7 @@ The Classics Coder App contains some **super cool features** to remove the pain 
  
 **So enjoy the Type-in Listing #3!**
 
-![Spectrum Ball in the Classics Coder App](/assets/images/spectrum-ball.png)
+![Spectrum Ball in the Classics Coder App](/images/spectrum-ball.png)
 
 - Download The Classics Coder App for macOS [here](http://www.classicscoder.com/downloads/classics-coder-1.0.1.zip) at first 
 - Find the working BASIC code [here](https://github.com/rogerboesch/classicscoder/blob/master/zxspectrum/basic-listings/SPECTRUM-BALL.BAS)

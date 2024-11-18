@@ -20,7 +20,7 @@ The Classics Coder App contains some **super cool features** to remove the pain 
  
 **So enjoy the Type-in Listing #4!**
 
-![Spectrum Ball in the Classics Coder App](/assets/images/tennis-cc.png)
+![Spectrum Ball in the Classics Coder App](/images/tennis-cc.png)
 
 - Download The Classics Coder App for macOS [here](http://www.classicscoder.com/downloads/classics-coder-1.0.1.zip) at first 
 - Find the working BASIC code [here](https://github.com/rogerboesch/classicscoder/blob/master/zxspectrum/basic-listings/TENNIS.BAS)

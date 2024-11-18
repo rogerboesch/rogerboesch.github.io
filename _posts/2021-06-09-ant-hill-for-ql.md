@@ -25,7 +25,7 @@ The Classics Coder App contains some **super cool features** to remove the pain 
  
 **So enjoy the Type-in Listing #1 for the QL!**
 
-![Ant Hillin the Classics Coder App](/assets/images/ant-hill.png)
+![Ant Hillin the Classics Coder App](/images/ant-hill.png)
 
 - Sinclair QL Version of The Classics Coder App available soon 
 - Find the working BASIC code [here](https://raw.githubusercontent.com/rogerboesch/classicscoder/master/sinclairql/basic-listings/ant_hill_bas)
