@@ -2,8 +2,6 @@ body {
     font-family: "Courier New", Times, serif;
 }
 
-$spacing-unit:   20px !default;
-
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
