@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 **AR Software Engineering Manager at day - Retro Game Developer by night**
 
 I create free tools, assets & learning resources for retro gaming and
