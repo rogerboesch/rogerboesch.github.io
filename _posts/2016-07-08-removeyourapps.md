@@ -1,4 +1,5 @@
 ## 🧑🏻‍💻 Remove your Apps from the Store!
+
 After **9 years** iOS mobile development, **3 startups** and **100+ apps** as a freelancer it's now time to start something *different*.
 
 Sure, the main time of my work is still dedicated to my company *appsAndYOU.com*, where we develop apps for various clients around the globe and also on the other startups, im still part of it.

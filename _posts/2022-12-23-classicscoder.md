@@ -1,4 +1,4 @@
-## 🕹️ Classics Coder
+## 🕹️ Classics Coder - ZX Spectrum on iPad
 
 Need some fun little projects for the Christmas time? Retro Coding in Basic and Assembler is fun. Especially together with your kids! The Classics Coder App is now finally available in the AppStore (iPad only for now). Merry Christmas 🎄
 
