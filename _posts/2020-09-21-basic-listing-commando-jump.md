@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 🕹️ Commando Jump - BASIC Type-In Listing #1
 
 # The golden age of type-in programs

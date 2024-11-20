@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 🕹️ Spectrum Invaders - BASIC Type-In Listing #2
 
 *from the Spectrum Book of games*

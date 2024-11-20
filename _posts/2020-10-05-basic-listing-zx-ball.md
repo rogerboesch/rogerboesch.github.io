@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 🕹️ ZX Ball - BASIC Type-In Listing #3
 
 *from Happy Computer August, 1986*

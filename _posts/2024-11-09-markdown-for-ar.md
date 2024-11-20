@@ -1,3 +1,6 @@
+---
+layout: post
+---
 
 ## 👓 AR-Markdown: A Practical Approach to Prototyping
 

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 🕹️ Tennis - BASIC Type-In Listing #4
 
 *from Happy Computer Octrober, 1984*

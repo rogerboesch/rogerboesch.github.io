@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 🧑🏻‍💻 Remove your Apps from the Store!
 
 After **9 years** iOS mobile development, **3 startups** and **100+ apps** as a freelancer it's now time to start something *different*.

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 🕹️ Vectrex Emulator in Unity
 
 How fast is Unity 3d really when it's about Scripting?

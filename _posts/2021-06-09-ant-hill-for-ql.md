@@ -1,4 +1,8 @@
-## 🕹️ Ant Hill - Greay SuperBasic game for the Sinclair QL!
+---
+layout: post
+---
+
+## 🕹️ Ant Hill - Game for the Sinclair QL!
 
 ![Ant Hill](/images/ant-hill.gif)
 

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 ## 👓 A ZX Emulator for the Apple Vision Pro
 
 A little XR fun project for the weekend:
