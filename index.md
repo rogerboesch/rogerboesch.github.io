@@ -4,7 +4,7 @@ layout: home
 
 👓 [ROGER BOESCH] 👾
 
-**Building XR Innovations by Day - Crafting Pixel Games by Night**
+**BUILDING XR INNOVATIONS BY DAY - CRAFTING RETRO PIXEL GAMES BY NIGHT**
 
 I create free tools, assets & learning resources for retro gaming and
 I also write regularly about augmented reality.
