@@ -25,9 +25,9 @@ By the late 1980s, dedicated gaming systems like the Nintendo Entertainment Syst
 
 ### The Role of the SEGA Mega Drive
 
-![SEGA Mega Drive Homebrew](/images/sega-ad.jpg)
-
 Launched in 1988 (1989 in North America), the SEGA Mega Drive exemplified this new era. It targeted a slightly older demographic than Nintendo, marketing itself as the edgier, more "grown-up" choice. Its library of games included arcade hits like Altered Beast and Golden Axe, as well as innovative exclusives.
+
+![SEGA Mega Drive Homebrew](/images/sega-ad.jpg)
 
 The Mega Drive also pioneered aggressive marketing strategies, famously challenging Nintendo with the tagline, "Genesis does what Nintendon’t." This rivalry ignited the first "console war," a cultural phenomenon that shifted gaming into the mainstream.
 
