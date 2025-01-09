@@ -48,6 +48,9 @@ While the current system is designed for use inside the boat, the ultimate goal 
 
 This project isn’t just a technical exercise—it’s a reimagining of how technology can enhance the sailing experience. AR has the potential to make sailing safer, more accessible, and more intuitive, empowering sailors to focus on the journey while technology handles the details.
 
+{% include youtubeplayer.html id="hyfIt4NF8sg" %}
+
+
 ### What’s Next?
 
 As the project evolves, I aim to refine the interface, add features like collision detection, and explore opportunities to extend the system for outdoor use. The ultimate goal is to create a robust tool that any sailor can use to enhance their adventures on the water.
