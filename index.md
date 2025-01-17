@@ -4,6 +4,8 @@ layout: home
 
 ROGER BOESCH
 
+![Photo](/images/about.png)
+
 **BUILDING XR INNOVATIONS BY DAY - CRAFTING RETRO PIXEL GAMES BY NIGHT**
 
 I create free tools, assets & learning resources for retro gaming and
