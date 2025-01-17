@@ -53,6 +53,6 @@ This project isn’t just a technical exercise—it’s a reimagining of how tec
 
 ### What’s Next?
 
-As the project evolves, I aim to refine the interface, add features like collision detection, and explore opportunities to extend the system for outdoor use. The ultimate goal is to create a robust tool that any sailor can use to enhance their adventures on the water.
+As the project evolves, I aim to refine the interface, add more features, and explore opportunities to extend the system for outdoor use. The ultimate goal is to create a robust tool that any sailor can use to enhance their adventures on the water.
 
-If you’re interested in AR, maritime technology, or just love sailing, I’d love to hear your thoughts. Let’s shape the future of sailing and AR together!
+If you’re interested in AR, maritime technology, or just love sailing, I’d love to hear your thoughts.
