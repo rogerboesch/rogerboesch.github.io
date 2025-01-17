@@ -2,11 +2,11 @@
 layout: home
 ---
 
+<img src="/images/about.png" width="200" height="200" />
+
 ROGER BOESCH
 
 **BUILDING XR INNOVATIONS BY DAY - CRAFTING RETRO PIXEL GAMES BY NIGHT**
-
-<img src="/images/about.png" width="200" height="200" />
 
 I create free tools, assets & learning resources for retro gaming and
 I also write regularly about augmented reality.
