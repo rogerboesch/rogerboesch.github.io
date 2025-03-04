@@ -32,7 +32,7 @@ I built the drone using an ArduPilot-compatible Pixhawk flight controller, which
 - Flight Controller: Pixhawk 4 (running ArduPilot)
 - Motors & ESCs: T-Motor MN2212 with 30A ESCs
 - GPS Module: uBlox M8N (for precise positioning)
-- Telemetry: 915MHz telemetry module for communication
+- Telemetry: 433MHz telemetry module for communication
 - Camera: Gimbal-stabilized HD camera for live video feed
 
 **NMEA 2000 Integration**
