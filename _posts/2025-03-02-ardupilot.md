@@ -2,7 +2,7 @@
 layout: post
 ---
 
-## 🚀 Eyes in the Sky: How I Made My Drone Sail with Me
+## 🚀 Eyes in the Sky: A Drone That Sails with Me
 
 ### Introduction
 
