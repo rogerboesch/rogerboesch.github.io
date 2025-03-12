@@ -2,7 +2,7 @@
 layout: post
 ---
 
-# RBXE - A Pixel Game Engine with Voxel Power
+# 👾 RBXE - A Pixel Game Engine with Voxel Power
 
 ## Introduction
 
