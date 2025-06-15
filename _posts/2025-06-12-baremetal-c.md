@@ -85,6 +85,7 @@ The result? A fully playable chess game on the original Vectrex screen, powered 
 ✅ Beautiful vector rendering on Vectrex CRT
 
 🔗 **Vectrex chess**: [github.com/rogerboesch/pitrex-chess](https://github.com/rogerboesch/pitrex-chess)
+
 🔗 **Pixel Engine**: [github.com/rogerboesch/rbxe](https://github.com/rogerboesch/rbxe)
 
 ---
