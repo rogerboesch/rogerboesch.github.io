@@ -82,7 +82,7 @@ A public **outdoor installation** is in preparation for Barcelona:
 - Real-world multiplayer experience — no screens required
 
 
-![Barcelona outdoor installation](/images/barcelona2.png)
+![Barcelona outdoor installation](/images/Barcelona2.png)
 
 ## 📦 Roadmap
 
