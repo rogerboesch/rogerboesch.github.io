@@ -32,6 +32,8 @@ VEC3x is a **laser-based vector game console** that:
 - Outputs optimized point data for laser projection
 - Compact, with Wi-Fi and USB connectivity
 
+![Editor](/images/laser.gif)
+
 ### 3. Smartphone Multiplayer Interface
 - Up to **4 smartphones** connect via Wi-Fi or Bluetooth
 
@@ -55,6 +57,7 @@ The VEC3x engine is built from the ground up for **laser vector output**:
 ### Included Games
 
 - Laser Pong (with water projection mode)
+- Laser Chess (player vs. computer or player)
 - Vector Breakout (multiplayer)
 - Star Castle-style shooter
 - Vectrex emulator with support for 20+ original games
