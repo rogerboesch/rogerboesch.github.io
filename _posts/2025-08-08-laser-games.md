@@ -2,7 +2,7 @@
 layout: post
 ---
 
-# VEC3x – Laser-Powered Vector Gaming Console
+# ⚡️ VEC3x – Laser-Powered Vector Gaming Console
 
 **VEC3x** is a custom-built game console I wrote, that brings vector-style arcade gaming into the physical world using **laser projection technology**. Originally designed as an MVP for an XR platform, the system has evolved into a standalone console with real hardware, tools for developers, and support for public outdoor gaming events.
 
