@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEXXON - Vector Graphics Shooter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+        }
+        
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        #canvas {
+            border: 2px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        
+        #controls {
+            background-color: #001100;
+            border: 1px solid #0f0;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 0 10px #0f0;
+        }
+        
+        #controls h2 {
+            margin-top: 0;
+            color: #0f0;
+            text-align: center;
+            text-shadow: 0 0 5px #0f0;
+        }
+        
+        .control-section {
+            margin: 15px 0;
+        }
+        
+        .control-section h3 {
+            color: #0f0;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .control-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 10px;
+            margin: 5px 0;
+            font-size: 13px;
+        }
+        
+        .key {
+            background-color: #002200;
+            border: 1px solid #0f0;
+            padding: 2px 6px;
+            display: inline-block;
+            font-weight: bold;
+            color: #0f0;
+        }
+        
+        #loading {
+            color: #0f0;
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #status {
+            color: #0f0;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            min-height: 20px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        a {
+            color: #0f0;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-shadow: 0 0 5px #0f0;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #0a0;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1 style="margin: 0; text-shadow: 0 0 10px #0f0;">VEXXON</h1>
+        <div id="loading">Loading game...</div>
+        <div id="status"></div>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        
+        <div id="controls">
+            <h2>CONTROLS</h2>
+            
+            <div class="control-section">
+                <h3>► MOVEMENT</h3>
+                <div class="control-row">
+                    <div><span class="key">↑</span> <span class="key">↓</span></div>
+                    <div>Increase/decrease altitude</div>
+                </div>
+                <div class="control-row">
+                    <div><span class="key">←</span> <span class="key">→</span></div>
+                    <div>Move left/right</div>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <h3>► ACTIONS</h3>
+                <div class="control-row">
+                    <div><span class="key">SPACE</span></div>
+                    <div>Fire bullets</div>
+                </div>
+                <div class="control-row">
+                    <div><span class="key">P</span></div>
+                    <div>Pause/unpause game</div>
+                </div>
+                <div class="control-row">
+                    <div><span class="key">R</span></div>
+                    <div>Restart (after game over)</div>
+                </div>
+            </div>
+                      
+            <div class="control-section">
+                <h3>► GAMEPLAY</h3>
+                <div style="font-size: 12px; line-height: 1.6; color: #0c0;">
+                    <p><strong>Fortress Section:</strong> Navigate walls, shoot destructible ones (pulsing), avoid indestructible walls. Destroy gun tanks.</p>
+                    <p><strong>Space Section:</strong> Fight enemy ships in open space. Dodge their fire and shoot them down.</p>
+                    <p><strong>Boss Section:</strong> Destroy all blocks ahead of you while the boss advances!</p>
+                    <p><strong>Collectibles:</strong> Fuel tanks restore fuel. Powerups grant special abilities (Spread Shot, Rapid Fire, Shield, Slow-Mo).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>VEXXON - A vector graphics isometric shooter</p>
+            <p>(C) 2025 by roger boesch</p>
+        </div>
+    </div>
+    
+    <script>
+        // Module configuration for Emscripten
+        var Module = {
+            canvas: document.getElementById('canvas'),
+            print: function(text) {
+                console.log(text);
+                document.getElementById('status').textContent = text;
+            },
+            printErr: function(text) {
+                console.error(text);
+                document.getElementById('status').textContent = 'Error: ' + text;
+            },
+            onRuntimeInitialized: function() {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('status').textContent = 'Game ready! Use arrow keys to move, SPACE to fire.';
+                // Focus canvas for keyboard input
+                Module.canvas.focus();
+            }
+        };
+        
+        // Make canvas focusable and focus it on click
+        Module.canvas.setAttribute('tabindex', '1');
+        Module.canvas.addEventListener('click', function() {
+            Module.canvas.focus();
+        });
+    </script>
+    
+    <!-- Emscripten-generated JavaScript will be loaded here -->
+    <script src="vexxon.js"></script>
+</body>
+</html>
