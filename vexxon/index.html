@@ -5,194 +5,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VEXXON - Vector Graphics Shooter</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: 'Courier New', monospace;
-            color: #0f0;
-        }
-        
-        #game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        #canvas {
-            border: 2px solid #0f0;
-            box-shadow: 0 0 20px #0f0;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
-        }
-        
-        #controls {
-            background-color: #001100;
-            border: 1px solid #0f0;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
             padding: 20px;
-            max-width: 800px;
-            box-shadow: 0 0 10px #0f0;
+            position: relative;
+            overflow-x: hidden;
         }
-        
-        #controls h2 {
-            margin-top: 0;
-            color: #0f0;
+
+        /* Starfield background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent),
+                radial-gradient(1px 1px at 15% 60%, white, transparent);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            animation: twinkle 20s ease-in-out infinite;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-section {
+            flex: 0 0 auto;
+             margin-top: 50px;
+        }
+
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: none;
             text-align: center;
-            text-shadow: 0 0 5px #0f0;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            animation: logo-pulse 4s ease-in-out infinite;
         }
-        
-        .control-section {
-            margin: 15px 0;
+
+        @keyframes logo-pulse {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255,255,255,0.6)); }
         }
-        
-        .control-section h3 {
-            color: #0f0;
+
+        .logo-placeholder {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        canvas {
+            border: 2px solid #fff;
+            display: block;
+            box-shadow: 0 0 20px #fff;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px #fff; }
+            50% { box-shadow: 0 0 40px #fff, 0 0 60px rgba(255,255,255,0.5); }
+        }
+
+        /* CRT Scanline effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .key {
+            background: #111;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .key:hover {
+            background: #222;
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
+            transform: scale(1.05);
+        }
+
+        .description {
+            padding: 5px 0;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #111;
+            border: 1px solid #fff;
+        }
+
+        .demo-notice {
+            background: #222;
+            border: 2px solid #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .demo-notice h2 {
+            margin-top: 0;
+            border: none;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
             margin-bottom: 8px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dotted #fff;
+        }
+
+        a:hover {
+            text-shadow: 0 0 5px #fff;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #000;
+            border: 1px solid #fff;
             font-size: 14px;
         }
-        
-        .control-row {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 10px;
-            margin: 5px 0;
-            font-size: 13px;
-        }
-        
-        .key {
-            background-color: #002200;
-            border: 1px solid #0f0;
-            padding: 2px 6px;
-            display: inline-block;
-            font-weight: bold;
-            color: #0f0;
-        }
-        
-        #loading {
-            color: #0f0;
-            font-size: 18px;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        #status {
-            color: #0f0;
-            font-size: 12px;
-            text-align: center;
-            padding: 10px;
-            min-height: 20px;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        a {
-            color: #0f0;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-shadow: 0 0 5px #0f0;
-        }
-        
-        .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #0a0;
+
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .info-section {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="game-container">
-        <h1 style="margin: 0; text-shadow: 0 0 10px #0f0;">VEXXON</h1>
-        <div id="loading">Loading game...</div>
-        <div id="status"></div>
-        <canvas id="canvas" width="800" height="600"></canvas>
-        
-        <div id="controls">
-            <h2>CONTROLS</h2>
-            
-            <div class="control-section">
-                <h3>► MOVEMENT</h3>
-                <div class="control-row">
-                    <div><span class="key">↑</span> <span class="key">↓</span></div>
-                    <div>Increase/decrease altitude</div>
-                </div>
-                <div class="control-row">
-                    <div><span class="key">←</span> <span class="key">→</span></div>
-                    <div>Move left/right</div>
-                </div>
-            </div>
-            
-            <div class="control-section">
-                <h3>► ACTIONS</h3>
-                <div class="control-row">
-                    <div><span class="key">SPACE</span></div>
-                    <div>Fire bullets</div>
-                </div>
-                <div class="control-row">
-                    <div><span class="key">P</span></div>
-                    <div>Pause/unpause game</div>
-                </div>
-                <div class="control-row">
-                    <div><span class="key">R</span></div>
-                    <div>Restart (after game over)</div>
-                </div>
-            </div>
-                      
-            <div class="control-section">
-                <h3>► GAMEPLAY</h3>
-                <div style="font-size: 12px; line-height: 1.6; color: #0c0;">
-                    <p><strong>Fortress Section:</strong> Navigate walls, shoot destructible ones (pulsing), avoid indestructible walls. Destroy gun tanks.</p>
-                    <p><strong>Space Section:</strong> Fight enemy ships in open space. Dodge their fire and shoot them down.</p>
-                    <p><strong>Boss Section:</strong> Destroy all blocks ahead of you while the boss advances!</p>
-                    <p><strong>Collectibles:</strong> Fuel tanks restore fuel. Powerups grant special abilities (Spread Shot, Rapid Fire, Shield, Slow-Mo).</p>
-                </div>
+    <div class="container">
+        <div class="game-section">
+            <canvas id="canvas" width="800" height="600"></canvas>
+            <div class="status">
+                <div>Loading game...</div>
             </div>
         </div>
-        
-        <div class="footer">
-            <p>VEXXON - A vector graphics isometric shooter</p>
-            <p>(C) 2025 by roger boesch</p>
+
+        <div class="info-section">
+            <div class="logo-container">
+                <img src="logo.png" alt="VEXXON" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="demo-notice">
+                <h2>⚠ Limited Demo Version</h2>
+                <p>This web version features the <strong>Fortress Section</strong> only.</p>
+                <p>The full game with all three sections is exclusive to <a href="https://vectrex.substack.com" target="_blank">Vectrex</a>.</p>
+            </div>
+
+            <div class="section">
+                <h2>Controls</h2>
+                <div class="controls-grid">
+                    <div class="key">↑ UP</div>
+                    <div class="description">Increase altitude</div>
+                    
+                    <div class="key">↓ DOWN</div>
+                    <div class="description">Decrease altitude</div>
+                    
+                    <div class="key">← LEFT</div>
+                    <div class="description">Move left</div>
+                    
+                    <div class="key">→ RIGHT</div>
+                    <div class="description">Move right</div>
+                    
+                    <div class="key">SPACE</div>
+                    <div class="description">Fire bullets</div>
+                    
+                    <div class="key">P</div>
+                    <div class="description">Pause/Unpause</div>
+                    
+                    <div class="key">R</div>
+                    <div class="description">Restart (after game over)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Fortress Section</h2>
+                <ul>
+                    <li><strong>Navigate</strong> through walls with varying heights</li>
+                    <li><strong>Destroy</strong> pulsing green walls to clear your path</li>
+                    <li><strong>Avoid</strong> solid green indestructible walls</li>
+                    <li><strong>Shoot</strong> red gun tanks on the ground</li>
+                    <li><strong>Collect</strong> fuel tanks to stay airborne</li>
+                    <li><strong>Grab</strong> powerups for temporary abilities</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Powerups</h2>
+                <ul>
+                    <li><strong>Spread Shot</strong> - Fire 3 bullets at once (15s)</li>
+                    <li><strong>Rapid Fire</strong> - Double fire rate (10s)</li>
+                    <li><strong>Shield</strong> - One-hit protection</li>
+                    <li><strong>Slow-Mo</strong> - Slow down time (8s)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Tips</h2>
+                <ul>
+                    <li>Watch your <strong>fuel gauge</strong> - don't run empty!</li>
+                    <li>Use <strong>altitude</strong> to your advantage</li>
+                    <li>Destroy enemies quickly for <strong>combo bonuses</strong></li>
+                    <li>Look ahead - walls appear in the distance</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>About Vexxon</h2>
+                <p>A vector graphics isometric shooter inspired by the classic arcade game Zaxxon. Experience retro gaming with modern mechanics.</p>
+                <p style="margin-top: 15px;">Follow development updates at:<br>
+                <a href="https://vectrex.substack.com" target="_blank">vectrex.substack.com</a></p>
+            </div>
         </div>
     </div>
-    
+
     <script>
-        // Module configuration for Emscripten
         var Module = {
             canvas: document.getElementById('canvas'),
             print: function(text) {
                 console.log(text);
-                document.getElementById('status').textContent = text;
             },
             printErr: function(text) {
                 console.error(text);
-                document.getElementById('status').textContent = 'Error: ' + text;
             },
-            onRuntimeInitialized: function() {
-                document.getElementById('loading').classList.add('hidden');
-                document.getElementById('status').textContent = 'Game ready! Use arrow keys to move, SPACE to fire.';
-                // Focus canvas for keyboard input
-                Module.canvas.focus();
+            setStatus: function(text) {
+                var status = document.querySelector('.status');
+                if (text) {
+                    status.innerHTML = text;
+                } else {
+                    status.style.display = 'none';
+                }
             }
         };
         
-        // Make canvas focusable and focus it on click
-        Module.canvas.setAttribute('tabindex', '1');
-        Module.canvas.addEventListener('click', function() {
-            Module.canvas.focus();
-        });
+        // Handle loading states
+        Module.setStatus('Downloading...');
+        window.onerror = function() {
+            Module.setStatus('Error: See JavaScript console for details');
+        };
     </script>
     
-    <!-- Emscripten-generated JavaScript will be loaded here -->
+    <!-- Your compiled Emscripten JavaScript file -->
     <script src="vexxon.js"></script>
 </body>
 </html>

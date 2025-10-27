@@ -1,0 +1,539 @@
+# ============================================================================
+# VEXXON GAME CONFIGURATION FILE
+# ============================================================================
+# Edit values below to customize game behavior without recompiling
+# Format: name = value
+# Boolean values: true, false (also accepts: yes, no, 1, 0, on, off)
+# Lines starting with # are comments and will be ignored
+
+# ============================================================================
+# FEATURE FLAGS - Enable/Disable Visual Features
+# ============================================================================
+
+# Enable floating "+X" score popups when destroying objects
+featureScorePopups = true
+
+# Enable "FUEL" text labels above fuel tanks
+featureFuelLabels = true
+
+# Enable distance markers on ground grid every 200 units
+featureDistanceMarkers = true
+
+# Enable section transition announcements ("SPACE SECTOR", etc.)
+featureSectionAnnouncements = true
+
+# Enable "FIGHTER" labels above enemy ships
+featureEnemyLabels = true
+
+# Enable "DANGER" warnings on indestructible walls
+featureWallWarnings = true
+
+# Enable boss health bar display (currently unused in most sections)
+featureBossHealth = false
+
+# Enable "LOW FUEL" warning when fuel is below 20%
+featureLowFuelWarning = true
+
+# Enable checkpoint markers in levels
+featureCheckpointMarkers = true
+
+# Enable combo multiplier display (X2, X3, etc.)
+featureComboMultiplier = true
+
+# Enable particle explosion effects when objects are destroyed
+featureParticleExplosions = true
+
+# Enable nebula background clouds in space section
+featureNebulaClouds = true
+
+# ============================================================================
+# SCREEN SETTINGS
+# ============================================================================
+
+# Screen width in pixels (640-1920)
+# Default: 800 provides good balance for gameplay
+screenWidth = 600
+
+# Screen height in pixels (480-1080)
+# Default: 600 provides good balance for gameplay
+screenHeight = 800
+
+# ============================================================================
+# GAME PHYSICS
+# ============================================================================
+
+# Speed at which the world scrolls forward (units per frame)
+# Range: 0.5-5.0 (slower = easier, faster = harder)
+# Default: 1.0 provides moderate challenge
+scrollSpeed = 1.0
+
+# Player lateral movement speed (Z-axis, left/right)
+# Range: 1.0-5.0 (higher = more responsive)
+# Default: 3.0 allows quick maneuvering
+playerMoveSpeedZ = 3.0
+
+# Player vertical movement speed (Y-axis, up/down)
+# Range: 1.0-5.0 (higher = more responsive)
+# Default: 2.0 slightly slower than lateral for finer altitude control
+playerMoveSpeedY = 2.0
+
+# Bullet forward velocity
+# Range: 5.0-15.0 (must be faster than scrollSpeed)
+# Default: 8.0 provides good shooting mechanics
+bulletSpeed = 8.0
+
+# ============================================================================
+# FUEL SYSTEM
+# ============================================================================
+
+# Starting number of lives
+# Range: 1-5 (lower = harder, higher = easier)
+# Default: 3 standard arcade-style lives
+startingLives = 3
+
+# Starting fuel amount (100 = 100%)
+# Range: 50-200 (lower = harder, higher = easier)
+# Default: 100 standard full tank
+startingFuel = 100.0
+
+# Fuel consumed per second
+# Range: 0.5-5.0 (higher = more challenging)
+# Default: 2.0 gives ~50 seconds of flight without refueling
+fuelConsumptionPerSecond = 2.0
+
+# Fuel restored when collecting a fuel tank
+# Range: 10-50 (should balance with consumption rate)
+# Default: 30 restores 15 seconds of flight
+fuelTankRefillAmount = 30.0
+
+# ============================================================================
+# PLAYER BOUNDS
+# ============================================================================
+
+# Master playfield width constant (half-width from center)
+# Range: 50-300 (larger = wider playfield)
+# Default: 240 provides wide playfield
+playfieldHalfWidth = 240.0
+
+# Minimum lateral position (left boundary, calculated from playfield)
+playerMinZ = -240.0
+
+# Maximum lateral position (right boundary, calculated from playfield)
+playerMaxZ = 240.0
+
+# Minimum altitude (ground level + clearance)
+# Range: 0-10 (0 = can touch ground, higher = safer minimum)
+# Default: 5 prevents flying too close to ground
+playerMinY = 5.0
+
+# Maximum altitude (ceiling)
+# Range: 80-150 (higher = more vertical space)
+# Default: 100 provides good vertical range for gap walls
+playerMaxY = 100.0
+
+# Player starting X position (forward/back)
+# Range: -50 to 50 (relative to world origin)
+# Default: 0 centered position
+playerStartX = 0.0
+
+# Player starting Y position (altitude)
+# Range: 10-50 (should be between playerMinY and playerMaxY)
+# Default: 20 safe starting altitude
+playerStartY = 20.0
+
+# Player starting Z position (lateral)
+# Range: -50 to 50 (should be between playerMinZ and playerMaxZ)
+# Default: 0 centered laterally
+playerStartZ = 0.0
+
+# ============================================================================
+# PLAYER SHIP DIMENSIONS
+# ============================================================================
+
+# Distance of nose from ship center (forward)
+# Range: 5-15 (visual scale of ship)
+# Default: 8 balanced ship size
+shipNoseOffset = 8.0
+
+# Distance of tail from ship center (backward, negative)
+# Range: -15 to -5 (visual scale of ship)
+# Default: -8 balanced ship size
+shipTailOffset = -8.0
+
+# Distance of wing attachment point from center (backward)
+# Range: -10 to -3 (wing position on fuselage)
+# Default: -5 mid-body wing placement
+shipWingBack = -5.0
+
+# Half-width of wing span (from center to wing tip)
+# Range: 4-12 (visual scale, affects collision perception)
+# Default: 12 maximum wingspan for dramatic appearance
+shipWingSpan = 12.0
+
+# ============================================================================
+# OBSTACLE/WALL CONSTANTS
+# ============================================================================
+
+# Wall thickness in forward direction (X-axis)
+# Range: 10-40 (thicker = harder to pass through gaps)
+# Default: 6 thinner walls for faster gameplay
+wallWidth = 6.0
+
+# Wall span across playfield (Z-axis, calculated from playfield)
+wallDepth = 480.0
+
+# Minimum wall height
+# Range: 10-30 (lower = easier to fly over)
+# Default: 15 provides low walls
+wallMinHeight = 15.0
+
+# Maximum wall height
+# Range: 60-100 (should be less than playerMaxY)
+# Default: 75 forces player to fly under sometimes
+wallMaxHeight = 75.0
+
+# Calculated range for random wall heights (max - min)
+wallHeightRange = 60.0
+
+# Default gap size for WALL_GAP obstacles
+# Range: 15-40 (smaller = harder, larger = easier to fly through)
+# Default: 30 provides comfortable gap for maneuvering
+defaultGapSize = 30.0
+
+# Default gap bottom position (where gap starts from ground)
+# Range: 15-40 (affects where the opening is positioned vertically)
+# Default: 25 centers gap in typical flight range
+defaultGapBottom = 25.0
+
+# ============================================================================
+# FUEL TANK CONSTANTS
+# ============================================================================
+
+# Fuel tank diameter (width and depth)
+# Range: 10-25 (affects visibility and collision)
+# Default: 15 easily visible but not too large
+fuelTankSize = 15.0
+
+# Fuel tank height (cylinder height)
+# Range: 10-25 (visual scale)
+# Default: 15 proportional to diameter
+fuelTankHeight = 15.0
+
+# ============================================================================
+# GUN TANK (TURRET) CONSTANTS
+# ============================================================================
+
+# Gun tank base size (width and depth)
+# Range: 12-25 (affects visibility and collision)
+# Default: 18 larger than fuel tanks to show threat
+gunTankSize = 18.0
+
+# Gun tank height (flatter for tank-like appearance)
+# Range: 4-12 (visual scale)
+# Default: 6 flatter profile for tank-like appearance
+gunTankHeight = 6.0
+
+# Distance at which turret starts firing at player
+# Range: 100-250 (lower = less warning time, higher = more warning)
+# Default: 150 gives player time to react
+gunTankFireDistance = 150.0
+
+# Time between turret shots in seconds
+# Range: 0.5-3.0 (lower = more aggressive, higher = easier to dodge)
+# Default: 1.5 allows dodging but keeps pressure
+gunTankFireCooldown = 1.5
+
+# Speed of enemy bullets fired by turrets
+# Range: 3.0-10.0 (lower = easier to dodge, higher = harder)
+# Default: 6.0 slower than player bullets, dodgeable but dangerous
+enemyBulletSpeed = 6.0
+
+# ============================================================================
+# OBSTACLE SPAWNING
+# ============================================================================
+
+# X position of first wall
+# Range: 100-300 (starting distance from player)
+# Default: 200 gives player time to orient
+firstWallX = 200.0
+
+# Distance between walls in initial setup
+# Range: 50-150 (affects initial difficulty)
+# Default: 80 moderate spacing
+wallSpacing = 80.0
+
+# Number of walls to pre-spawn at game start
+# Range: 2-5 (more = smoother start, fewer = faster load)
+# Default: 3 balanced pre-spawning
+initialWallCount = 3
+
+# Minimum gap between spawned walls (random generation)
+# Range: 40-100 (smaller = more dense obstacles)
+# Default: 60 moderate density
+wallMinGap = 60.0
+
+# Maximum gap between spawned walls (random generation)
+# Range: 80-150 (larger = more breathing room)
+# Default: 110 allows recovery time
+wallMaxGap = 110.0
+
+# Calculated range for random gaps (max - min)
+wallGapRange = 50.0
+
+# Distance ahead where new walls spawn
+# Range: 200-400 (must be > screen width in world space)
+# Default: 250 spawns just off-screen
+wallSpawnDistance = 250.0
+
+# Distance behind where old walls are removed
+# Range: -150 to -50 (negative = behind player)
+# Default: -100 removes when safely off-screen
+wallRemovalDistance = -100.0
+
+# ============================================================================
+# GRID CONSTANTS (Visual ground reference)
+# ============================================================================
+
+# Size of each grid cell
+# Range: 20-50 (affects visual density)
+# Default: 30 provides clear grid without clutter
+gridCellSize = 30.0
+
+# Minimum Z position of grid (left edge, calculated from playfield)
+gridMinZ = -270.0
+
+# Maximum Z position of grid (right edge, calculated from playfield)
+gridMaxZ = 270.0
+
+# Spacing between grid cross-lines
+# Range: 30-60 (affects visual density)
+# Default: 40 balanced grid density
+gridCrossSpacing = 40.0
+
+# Number of cross-lines on each side of center
+# Range: 2-6 (more = denser grid)
+# Default: 4 provides good visual reference
+gridCrossCount = 4
+
+# Starting X index for grid drawing (in grid cells)
+gridStartX = -10
+
+# Ending X index for grid drawing (in grid cells)
+gridEndX = 25
+
+# Minimum X position for grid culling (don't draw beyond this)
+# Range: -100 to 0 (negative = behind view)
+# Default: -50 culls far behind
+gridCullMin = -50.0
+
+# Maximum X position for grid culling (don't draw beyond this)
+# Extended to match visible distance and prevent pop-in
+gridCullMax = 400.0
+
+# ============================================================================
+# BULLET CONSTANTS
+# ============================================================================
+
+# Visual length of bullet line
+# Range: 2-10 (visual only, doesn't affect collision)
+# Default: 3 small but visible
+bulletLength = 3.0
+
+# Maximum distance bullet travels before removal
+# Range: 200-500 (larger = bullets travel farther)
+# Default: 300 travels beyond visible range
+bulletMaxDistance = 300.0
+
+# Minimum distance (behind player) before bullet removal
+# Range: -150 to -50 (negative = behind player)
+# Default: -100 safety margin for bullets that miss
+bulletMinDistance = -100.0
+
+# ============================================================================
+# SCORING
+# ============================================================================
+
+# Points awarded for destroying a wall
+# Range: 50-500 (affects score progression)
+# Default: 100 standard score increment
+pointsPerWallDestroyed = 100
+
+# Points awarded for collecting a fuel tank
+# Range: 25-200 (lower than wall to encourage shooting)
+# Default: 50 half of wall destruction
+pointsPerFuelTank = 50
+
+# Points awarded for destroying an enemy ship
+# Range: 50-500 (affects score progression)
+# Default: 100 same as wall destruction
+pointsPerEnemyShip = 100
+
+# ============================================================================
+# PROJECTION CONSTANTS (Isometric view transformation)
+# ============================================================================
+
+# X offset for screen projection (shifts view horizontally)
+# Range: 50-200 (affects where 3D origin appears on screen)
+# Default: 210 positions view nicely on screen
+isoProjOffsetX = 200.0
+
+# Y offset for screen projection (shifts view vertically)
+# Range: 50-200 (affects where 3D origin appears on screen)
+# Default: 105 positions view nicely on screen
+isoProjOffsetY = 185.0
+
+# Scale factor for X-axis in isometric projection
+# Range: 1.0-3.0 (affects viewing angle and scale)
+# Default: 2.0 standard isometric scale
+isoProjScaleX = 1.8
+
+# Scale factor for Z-to-X conversion (lateral depth)
+# Range: 0.5-1.5 (affects isometric angle)
+# Default: 0.8 creates proper isometric feel
+isoProjScaleZtoX = 0.8
+
+# Scale factor for X-to-Y conversion (depth to height)
+# Range: 0.5-1.5 (affects isometric angle)
+# Default: 0.8 creates proper isometric feel
+isoProjScaleXtoY = 1.0
+
+# Scale factor for Z-to-Y conversion (lateral to height)
+# Range: 0.2-0.8 (affects isometric angle)
+# Default: 0.3 creates proper isometric feel
+isoProjScaleZtoY = 0.3
+
+# Scale factor for Y-axis (altitude) in isometric projection
+# Range: 1.0-3.0 (affects vertical scale perception)
+# Default: 2.0 makes altitude changes visible
+isoProjScaleY = 1.9
+
+# ============================================================================
+# POWERUP CONSTANTS
+# ============================================================================
+
+# Powerup cube size
+# Range: 8-20 (visual scale)
+# Default: 12 easily visible
+powerupSize = 12.0
+
+# Vertical bobbing range for floating animation
+# Range: 2-10 (visual effect)
+# Default: 5 noticeable but not distracting
+powerupBobRange = 5.0
+
+# Bobbing speed (cycles per second)
+# Range: 1.0-4.0 (visual effect)
+# Default: 2.0 smooth animation
+powerupBobSpeed = 2.0
+
+# Collision radius for pickup
+# Range: 10-25 (affects ease of collection)
+# Default: 15 generous but requires aiming
+powerupCollisionRadius = 15.0
+
+# Duration of spread shot powerup (seconds)
+# Range: 5-30 (longer = more powerful)
+# Default: 15 good duration
+powerupDurationSpreadShot = 15.0
+
+# Duration of rapid fire powerup (seconds)
+# Range: 5-20 (longer = more powerful)
+# Default: 10 moderate duration
+powerupDurationRapidFire = 10.0
+
+# Duration of shield powerup (instant one-hit protection)
+# Default: 0.0 (shield doesn't expire, used on next hit)
+powerupDurationShield = 0.0
+
+# Duration of slow-mo powerup (seconds)
+# Range: 5-15 (longer = more powerful)
+# Default: 8 enough to clear difficult sections
+powerupDurationSlowMo = 8.0
+
+# Slow-mo time scale multiplier
+# Range: 0.3-0.7 (lower = slower, 0.5 = half speed)
+# Default: 0.5 half speed
+slowMoTimeScale = 0.5
+
+# Rapid fire cooldown multiplier
+# Range: 0.3-0.7 (lower = faster fire, 0.5 = double rate)
+# Default: 0.5 double fire rate
+rapidFireCooldownMultiplier = 0.5
+
+# Spread shot angle (degrees between bullets)
+# Range: 5-30 (larger = wider spread)
+# Default: 15 balanced spread
+spreadShotAngle = 15.0
+
+# Base fire cooldown for player (seconds between shots)
+# Range: 0.1-0.5 (lower = faster fire)
+# Default: 0.2 rapid but not too fast
+baseFireCooldown = 0.2
+
+# Points for collecting powerups
+# Range: 50-200 (affects score)
+# Default: 75 moderate reward
+pointsPerPowerup = 75
+
+# ============================================================================
+# BOSS BATTLE CONSTANTS
+# ============================================================================
+
+# Distance where boss starts (far away from player)
+# Range: 200-400 (larger = more time before boss arrives)
+# Default: 300 gives player time to destroy blocks
+bossStartDistance = 300.0
+
+# Distance from player when boss is considered "reached"
+# Range: 10-30 (affects lose condition)
+# Default: 20 reasonable collision distance
+bossPlayerDistance = 20.0
+
+# Speed at which boss advances toward player
+# Range: 0.3-1.5 (lower = easier, higher = more pressure)
+# Default: 0.1 slow advance creates tension
+bossAdvanceSpeed = 0.1
+
+# Boss robot health points (how many hits to defeat)
+# Range: 20-100 (lower = easier boss, higher = harder)
+# Default: 50 challenging but achievable
+bossHealth = 50
+
+# Time between boss shots in seconds
+# Range: 0.5-2.0 (lower = more aggressive, higher = easier)
+# Default: 1.0 constant pressure
+bossFireCooldown = 1.0
+
+# Points awarded for destroying a boss block
+# Range: 100-500 (affects score)
+# Default: 200 significant reward
+pointsPerBossBlock = 200
+
+# Size of each destructible block behind player
+# Range: 10-40 (affects visibility and hit detection)
+# Default: 30 larger size for easier hitting
+bossBlockSize = 30.0
+
+# Number of blocks player must destroy to win
+# Range: 4-12 (fewer = easier, more = harder)
+# Default: 8 balanced challenge
+bossBlockCount = 8
+
+# Distance behind player where blocks are placed
+# Range: 50-150 (closer = harder to hit, farther = easier)
+# Default: 120 good distance for targeting
+bossBlockDistance = 120.0
+
+# ============================================================================
+# TIMING
+# ============================================================================
+
+# Duration of crash animation in seconds before respawning
+# Range: 1.0-5.0 (how long to show "CRASH" message)
+# Default: 3.0 gives player time to process what happened
+crashDuration = 3.0
+
+# Frame delay in milliseconds (target: 60 FPS = 16ms, 30 FPS = 33ms)
+# Range: 8-33 (lower = higher framerate)
+# Default: 16 targets ~60 FPS
+frameDelayMs = 16
